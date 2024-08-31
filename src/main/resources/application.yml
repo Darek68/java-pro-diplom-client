@@ -1,0 +1,19 @@
+server:
+  port: 8191
+spring:
+  application:
+    name: diplom-pro
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres?currentSchema=clients
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: 352800
+  jpa:
+    show-sql: true
+  data:
+    jdbc:
+      dialect: postgresql
+
+
+# jdbc:postgresql://localhost:5432/mydatabase?currentSchema=myschema
+# jdbc:postgresql://localhost:5432/mydatabase?searchpath=myschema
