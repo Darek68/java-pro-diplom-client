@@ -9,11 +9,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @Builder
-public class ClientInfoDto {
+public class UserInfoDto {
     private Long id;
     private String firstName;
     private String lastName;
-    private String clientStatus;
+    private String userStatus;
     private boolean isAdmin;
     private String comment;
 }

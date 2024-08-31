@@ -6,7 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
-import ru.darek.diplompro.services.ClientStatus;
+import ru.darek.diplompro.services.UserStatus;
 
 import java.time.LocalDateTime;
 
@@ -14,8 +14,8 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Data
 @Entity
-@Table(name = "clients")
-public class Client {
+@Table(name = "users")
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -27,12 +27,12 @@ public class Client {
     @Column(name = "last_name")
     private String lastName;
 
-    @Column(name = "client_status")
+    @Column(name = "user_status")
     @Enumerated(EnumType.ORDINAL)
-    private ClientStatus clientStatus;
+    private UserStatus userStatus;
 
-    @Column(name = "is_admin")
-    private boolean isAdmin;
+    @Column(name = "admin")
+    private boolean admin;
 
     @Column(name = "comment")
     private String comment;
