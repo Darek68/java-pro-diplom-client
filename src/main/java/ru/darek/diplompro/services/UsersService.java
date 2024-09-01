@@ -33,6 +33,7 @@ public class UsersService {
 
     public User updateUserById(UserInfoDto userInfoDto,Long requesterId) {
         logger.info("1 updateUserById userInfoDto = {}   ", userInfoDto);
+        // TODO  добавить валидацию полей
         User user = getUserInfoById(userInfoDto.getId(),requesterId);
         user.setUserStatus(UserStatus.valueOf(userInfoDto.getUserStatus()));
         user.setComment(userInfoDto.getComment());
@@ -42,6 +43,7 @@ public class UsersService {
 
     public User createUser(UserInfoDto userInfoDto,Long requesterId) {
         logger.info("1 createUser userInfoDto = {}   ", userInfoDto);
+        // TODO  добавить валидацию полей
         User user = userDtoMapper.dtoToUser(userInfoDto);
         user.setUserStatus(UserStatus.CREATED);
         logger.info("2 createUser user = {}   ", user);

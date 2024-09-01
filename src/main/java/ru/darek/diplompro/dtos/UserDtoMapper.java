@@ -17,7 +17,7 @@ public class UserDtoMapper {
                 .firstName(user.getFirstName())
                 .lastName(user.getLastName())
                 .userStatus(String.valueOf(user.getUserStatus()))
-                .isAdmin(user.isAdmin())
+                .admin(user.isAdmin())
                 .comment(user.getComment())
                 .build();
     }
