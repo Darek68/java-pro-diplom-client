@@ -13,7 +13,6 @@ import java.util.List;
 @Repository
 public interface UsersRepository extends JpaRepository<User, Long> {
 
- //  List<User> findAllByAdminEquals(boolean isAdmin);
    List<User> findAllByAdmin(boolean admin);
 
 }

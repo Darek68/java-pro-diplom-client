@@ -3,6 +3,7 @@ package ru.darek.diplompro.dtos;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.darek.diplompro.entities.User;
+import ru.darek.diplompro.services.UserStatus;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -22,5 +23,15 @@ public class UserDtoMapper {
     }
     public List<UserInfoDto> allUsersToDto(List<User> users){
         return users.stream().map(user -> userToDto(user)).collect(Collectors.toList());
+    }
+    public User dtoToUser(UserInfoDto userInfoDto){
+        return User.builder()
+              //  .id(userInfoDto.getId())
+                .firstName(userInfoDto.getFirstName())
+                .lastName(userInfoDto.getLastName())
+                .userStatus(UserStatus.valueOf(userInfoDto.getUserStatus()))
+                .admin(userInfoDto.isAdmin())
+                .comment(userInfoDto.getComment())
+                .build();
     }
 }

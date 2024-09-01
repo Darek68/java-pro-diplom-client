@@ -2,6 +2,7 @@ package ru.darek.diplompro.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
@@ -14,6 +15,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Data
 @Entity
+@Builder
 @Table(name = "users")
 public class User {
     @Id
